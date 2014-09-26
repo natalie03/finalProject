@@ -4,21 +4,21 @@
 
 'use strict';
 
-var Userprof = require('./userprof.model');
+var Csa = require('./csa.model');
 
 exports.register = function(socket) {
-  Userprof.schema.post('save', function (doc) {
+  Csa.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  Userprof.schema.post('remove', function (doc) {
+  Csa.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('userprof:save', doc);
+  socket.emit('csa:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('userprof:remove', doc);
+  socket.emit('csa:remove', doc);
 }

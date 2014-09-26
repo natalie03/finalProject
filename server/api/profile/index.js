@@ -1,7 +1,7 @@
 'use strict';
 
 var express = require('express');
-var controller = require('./farmprof.controller');
+var controller = require('./profile.controller');
 
 var router = express.Router();
 

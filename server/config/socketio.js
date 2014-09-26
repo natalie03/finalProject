@@ -18,8 +18,8 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/userprof/userprof.socket').register(socket);
-  require('../api/farmprof/farmprof.socket').register(socket);
+  require('../api/profile/profile.socket').register(socket);
+  require('../api/csa/csa.socket').register(socket);
   require('../api/thing/thing.socket').register(socket);
 }
 

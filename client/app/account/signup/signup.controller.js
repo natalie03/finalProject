@@ -16,7 +16,7 @@ angular.module('finalProjectApp')
         })
         .then( function() {
           // Account created, redirect to home
-          $location.path('/');
+          $location.path('/createprofile');
         })
         .catch( function(err) {
           err = err.data;

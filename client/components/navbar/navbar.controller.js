@@ -11,10 +11,6 @@ angular.module('finalProjectApp')
       'link': '/farms'
     },
     {
-      'title':'Profile',
-      'link': '/profile'
-    },
-    {
       'title':'FAQ',
       'link': '/faq'
     }

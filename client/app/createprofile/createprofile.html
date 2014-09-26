@@ -1,0 +1,22 @@
+<h1>Fill Out This Form To Create Your Profile</h1>
+
+
+<h2>First, Select Your Account Type:</h2>
+<select name="accType" id="" ng-model="accType">
+  <option value="vendor">Farm/Vendor</option>
+  <option value="consumer">Consumer</option>
+</select>
+<form action="" ng-show="accType==='vendor'" ng-submit="addVendor(vendor)">
+  <input type="text" placeholder="Company Name" required ng-model="vendor.name">
+  <textarea name="bio" id="" cols="30" rows="10" placeholder="About Your Farm/Company" ng-model="vendor.info"></textarea>
+  <input type="text" placeholder="Address" ng-model="vendor.info">
+
+  <button>Create Profile</button>
+</form>
+
+<form action="" ng-show="accType==='consumer'" ng-submit="addCust(customer)">
+  <input type="text" placeholder="Your Name" ng-model="customer.name" required>
+  <textarea name="bio" id="" cols="30" rows="10" placeholder="Write a Short Bio Here" ng-model="customer.info"></textarea>
+
+  <button>Create Profile</button>
+</form>

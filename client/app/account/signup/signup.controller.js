@@ -12,7 +12,6 @@ angular.module('finalProjectApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          accType: $scope.user.accType,
           password: $scope.user.password
         })
         .then( function() {

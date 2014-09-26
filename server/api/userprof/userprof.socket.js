@@ -4,21 +4,21 @@
 
 'use strict';
 
-var Farm = require('./farm.model');
+var Userprof = require('./userprof.model');
 
 exports.register = function(socket) {
-  Farm.schema.post('save', function (doc) {
+  Userprof.schema.post('save', function (doc) {
     onSave(socket, doc);
   });
-  Farm.schema.post('remove', function (doc) {
+  Userprof.schema.post('remove', function (doc) {
     onRemove(socket, doc);
   });
 }
 
 function onSave(socket, doc, cb) {
-  socket.emit('farm:save', doc);
+  socket.emit('userprof:save', doc);
 }
 
 function onRemove(socket, doc, cb) {
-  socket.emit('farm:remove', doc);
+  socket.emit('userprof:remove', doc);
 }

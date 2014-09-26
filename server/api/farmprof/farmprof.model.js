@@ -3,10 +3,10 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
-var FarmSchema = new Schema({
+var FarmprofSchema = new Schema({
   name: String,
   info: String,
   active: Boolean
 });
 
-module.exports = mongoose.model('Farm', FarmSchema);
+module.exports = mongoose.model('Farmprof', FarmprofSchema);

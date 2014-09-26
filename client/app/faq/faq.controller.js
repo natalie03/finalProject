@@ -2,5 +2,12 @@
 
 angular.module('finalProjectApp')
   .controller('FaqCtrl', function ($scope) {
-    $scope.message = 'Hello';
+    $scope.faqs = [{
+      quest: "First Question?",
+      answ:"THE ANSWER"
+    },
+    {
+      quest: "Another Question?",
+      answ:"ANOTHER ANSWER"
+    }];
   });

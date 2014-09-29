@@ -1,27 +1,26 @@
 'use strict';
 
 angular.module('finalProjectApp')
-  .controller('VendorsCtrl', function ($scope, $http, $routeParams) {
+  .controller('VendorsCtrl', function ($scope, $http, $routeParams, mainSvc) {
 
-    var getProfs = function(profiles){
 
-      $http.get('api/profiles').success(function(data){
-        console.log(data);
-        $scope.profiles = data;
-        console.log($scope.profiles);
-        $scope.farmProfiles = [];
+    mainSvc.getProfs().success(function(data){
 
-        for (var i = 0; i < $scope.profiles.length; i++) {
-            if ($scope.profiles[i].accType === 'vendor'){
+        var farmProfiles = [];
+        for (var i = 0; i < data.length; i++) {
+            if (data[i].accType === 'vendor'){
               console.log("vendor");
-              $scope.farmProfiles.push($scope.profiles[i]);
-              console.log($scope.farmProfiles);
+              farmProfiles.push(data[i]);
+              console.log(farmProfiles);
             }
         }
-      });
-    };
+      $scope.farmProfiles =farmProfiles;
+    });
 
-    getProfs();
+    mainSvc.singleProf($routeParams.id).then(function(response){
+      $scope.singleProfile = response.data;
+
+    });
 
 
 

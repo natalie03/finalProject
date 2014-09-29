@@ -1,0 +1,24 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<h2>{{ currentUser.name }}'s Harvest Profile</h2>
+<h1>{{cup.name}}</h1>
+<a href="{{cup.website}}">{{cup.website}}</a>
+<p>{{cup.address}}</p>
+<p>{{cup.info}}</p>
+
+<button>Edit Profile</button>
+<div ng-show="{{cup.accType}} === 'vendor'">
+  <a href="" ng-click="csa=!csa">Add CSA Boxes to Your Profile</a>
+  <form action="" ng-show="csa">
+    <p>Title your CSA Box:
+    <input type="text"></p>
+    <p>Season:
+    <input type="text"></p>
+    <p>Price:
+    <input type="Number"></p>
+    <p>Available Shares:
+    <input type="Number"></p>
+    <p>Payment Options:</p>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+  </form>
+</div>

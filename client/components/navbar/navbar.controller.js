@@ -8,7 +8,7 @@ angular.module('finalProjectApp')
     },
     {
       'title':'Browse Farms',
-      'link': '/farms'
+      'link': '/vendors'
     },
     {
       'title':'FAQ',

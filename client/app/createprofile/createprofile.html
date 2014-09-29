@@ -9,7 +9,8 @@
 <form action="" ng-show="accType==='vendor'" ng-submit="addVendor(vendor)">
   <input type="text" placeholder="Company Name" required ng-model="vendor.name">
   <textarea name="bio" id="" cols="30" rows="10" placeholder="About Your Farm/Company" ng-model="vendor.info"></textarea>
-  <input type="text" placeholder="Address" ng-model="vendor.info">
+  <input type="text" placeholder="Address" ng-model="vendor.address">
+  <input type="text" placeholder="Website URL" ng-model="vendor.website">
 
   <button>Create Profile</button>
 </form>

@@ -9,6 +9,7 @@ var ProfileSchema = new Schema({
   accType: String,
   info: String,
   address: String,
+  website: String,
   csas:[{type: Schema.ObjectId, ref: 'Csa'}],
   active: Boolean
 });

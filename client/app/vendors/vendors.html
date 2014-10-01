@@ -1,13 +1,13 @@
+<div ng-include="'components/fonts.html'"></div>
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-<div ng-repeat="profile in farmProfiles" >
+<div class="vendors">
+<div class="oneVendor" ng-repeat="profile in farmProfiles" >
   <h1>{{profile.name}}</h1>
   <p>{{profile.info}}</p>
   <p>{{profile.address}}</p>
-  <a href="{{profile.website}}">{{profile.website}}</a>
-  <a href="vendors/{{profile._id}}">Learn More</a>
-  <hr>
-
-
+  <a href="{{profile.website}}">Website</a>
+  <br>
+  <a href="/vendors/{{profile._id}}">Learn More</a>
+</div>
 
 </div>

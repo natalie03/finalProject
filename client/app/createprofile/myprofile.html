@@ -1,24 +1,48 @@
+<div ng-include="'components/fonts.html'"></div>
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<h2>{{ currentUser.name }}'s Harvest Profile</h2>
+<div class="profile">
+<div class="myProfile">
 <h1>{{cup.name}}</h1>
-<a href="{{cup.website}}">{{cup.website}}</a>
+<a href="{{cup.website}}">Website</a>
 <p>{{cup.address}}</p>
 <p>{{cup.info}}</p>
 
-<button>Edit Profile</button>
+<div class="csas" ng-repeat="csaBox in myCsas">
+  <h2>{{csaBox.name}}: ${{csaBox.price}}</h2>
+  <p>{{csaBox.desc.substring(0, 75)}}... <a href="">More</a> </p>
+  <p>Season: {{csaBox.season}}</p>
+  <p>Frequency: {{csaBox.frequency}}</p>
+  <p>{{csaBox.shares}} shares left!</p>
+  <button>Buy Now!</button>
+
+</div>
+
+
 <div ng-show="{{cup.accType}} === 'vendor'">
   <a href="" ng-click="csa=!csa">Add CSA Boxes to Your Profile</a>
-  <form action="" ng-show="csa">
+  <br>
+  <a href="">Edit Your Profile</a>
+  <form action="" ng-show="csa" ng-submit="addBox(box)">
     <p>Title your CSA Box:
-    <input type="text"></p>
+    <input type="text" placeholder="Ex: Single Family Box" ng-model="box.name"></p>
+    <p>Description:
+    <input type="text" placeholder="Ex: Four different veggies" ng-model="box.desc"></p>
     <p>Season:
-    <input type="text"></p>
+    <input type="text" placeholder="Ex: August 31-November 31" ng-model="box.season"></p>
+    <p>Frequency:
+    <input type="text" placeholder="Ex: Every Friday" ng-model="box.frequency"></p>
     <p>Price:
-    <input type="Number"></p>
+    <input type="Number" ng-model="box.price"></p>
+    <p>Pick Up Location:
+    <input type="text" placeholder="Ex: Whole Foods, Mt. Pleasant" ng-model="box.pulocation"></p>
     <p>Available Shares:
-    <input type="Number"></p>
+    <input type="Number" ng-model="box.shares"></p>
     <p>Payment Options:</p>
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <textarea name="" id="" cols="30" rows="10" ng-model="box.payment" placeholder="Please write a message for your customers on how you'd like to be paid. Ex: Please send checks to P.O Box 123"></textarea>
+    <button type="submit">Add Box</button>
   </form>
+</div>
+
+</div>
 </div>

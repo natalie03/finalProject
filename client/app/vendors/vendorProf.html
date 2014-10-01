@@ -1,2 +1,24 @@
+<div ng-include="'components/fonts.html'"></div>
 <div ng-include="'components/navbar/navbar.html'"></div>
-<h1>vendor prof</h1>
+<div class="profile">
+<div class="container">
+  <h1>{{singleProfile.name}}</h1>
+  <a href="{{singleProfile.website}}">Website</a>
+  <p>{{singleProfile.address}}</p>
+  <p>{{singleProfile.info}}</p>
+  <div class="csas" ng-repeat="csaBox in vendCsas">
+    <h2>{{csaBox.name}}: ${{csaBox.price}}</h2>
+    <p>{{csaBox.desc.substring(0, 75)}}... <a href="">More</a> </p>
+    <p>Season: {{csaBox.season}}</p>
+    <p>Frequency: {{csaBox.frequency}}</p>
+    <p>{{csaBox.shares}} shares left!</p>
+    <button>Buy Now!</button>
+
+  </div>
+
+  <div class="back">
+  <a href="/vendors">Back</a>
+  </div>
+</div>
+
+</div>

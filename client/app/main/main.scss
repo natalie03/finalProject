@@ -1,55 +1,85 @@
-$green: #B8D677;
+$green: #A8B275;
+$orange: rgba(255, 165, 0, 1);
 body{
   font-family: 'Open Sans Condensed', sans-serif;
-  a{
-    color:$green;
+
+}
+.row{
+  margin-top:7%;
+  padding:0 5%;
+  h1{
+    color:$orange;
   }
 }
 .navbar{
-  background-color:$green;
+  background-color:rgba(255, 255, 255, .5);
+  position:fixed;
+  top:0;
+  width:100%;
+  border:none;
+  z-index:1;
+
   .navbar-brand{
-    color:white;
+    color:$green;
     font-family: 'Pacifico', cursive;
+
   }
 }
 header{
-  background-image: url(/assets/images/veggies.jpg);
-  background-size:cover;
+  width:100%;
+  background-color:rgba(168, 178, 117, 0);
   color:white;
   padding-top:5%;
   padding-bottom:5%;
+  text-align:center;
+  z-index:2;
+  &:hover{
+    background-color: rgba(168, 178, 117, .6);
+    transition:all 1s ease-in-out;
+  }
   h1{
     font-family: 'Pacifico', cursive;
+    font-size:10em;
+    padding-top:10%;
+    padding-bottom:10%;
+    text-shadow: 1px 1px 1px #000;
   }
 
 }
-.thing-form {
-    margin: 20px 0;
+.bgImage{
+  background-image: url(/assets/images/veggies.jpg);
+  background-size:cover;
+}
+.about{
+  background-color:rgba(255, 165, 0, 1);
+  padding:5%;
+  color:white;
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
-}
-
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
-}
-
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
-}
 
 .footer {
     text-align: center;
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+    background-color:$green;
+}
+.third{
+  margin-top:6%;
+  text-align:center;
+  width:33%;
+  display:inline-block;
+  vertical-align:top;
+  h2{
+    color:$orange;
+  }
+
+  img{
+    border-radius:100%;
+    margin-bottom:6%;
+    width:50%;
+  }
+  ul{
+    text-align:left;
+  }
 }

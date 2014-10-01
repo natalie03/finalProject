@@ -1,12 +1,64 @@
-input{
-  width:60%;
+$orange: rgba(255, 165, 0, 1);
+$green: #A8B275;
+input, textarea{
+  width:100%;
   font-size:1.25em;
+  border:1.5px solid $green;
+  margin-bottom:1%;
+  padding:1%;
 }
-textarea{
-  width:60%;
-  font-size:1.25em;
+
+.csas{
+  width:48%;
+  margin-left:1%;
+  border-radius:5px;
+  display:inline-block;
+  vertical-align:top;
+  padding:1%;
+  background-color:rgba(255, 255, 255, .5);
+  h2{
+    color:$orange;
+  }
+  a{
+    font-size:1em;
+  }
+  p{
+    font-size:1em;
+  }
 }
-select{
-  width:60%;
-  font-size:1.25em;
+.title{
+  text-align:center;
+  h1{
+    color:$orange,
+  }
+  h2{
+    color:$green;
+  }
+  select{
+    font-size:1.5em;
+    width:25%;
+    border:1px solid $orange;
+  }
+  span{
+    font-family: 'Pacifico', cursive;
+    color:$green;
+  }
+}
+.myProfile{
+  width:80%;
+  margin-left:10%;
+}
+form{
+  width:80%;
+  margin-left:10%;
+  margin-bottom:10%;
+  h2{
+    color:$orange;
+  }
+  button{
+    background-color:$orange;
+    border:none;
+    text-size:2em;
+    padding:1%;
+  }
 }

@@ -6,9 +6,13 @@ var mongoose = require('mongoose'),
 var CsaSchema = new Schema({
   user: {type: Schema.ObjectId, ref: 'User'},
   name: String,
+  desc: String,
   season: String,
   price: Number,
-  slots: Number,
+  frequency: String,
+  pulocation: String,
+  shares: Number,
+  payment: String,
   active: Boolean
 });
 

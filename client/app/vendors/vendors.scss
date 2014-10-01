@@ -1,0 +1,35 @@
+
+a{
+  color:rgba(255, 165, 0, 1);
+  font-weight:bold;
+}
+.vendors{
+  background-color:$green;
+  padding:5%;
+  h1{
+    color:$green;
+    padding:0;
+    margin:0;
+  }
+}
+.oneVendor{
+  background-color:rgba(255, 255, 255, .5);
+  border-radius:5px;
+  padding:1%;
+  margin:1%;
+}
+.profile{
+  padding-top:5%;
+  padding-bottom:50%;
+  background-color:$green;
+  h1{
+    color:white;
+    font-size:4em;
+  }
+  p, a{
+    font-size:1.5em;
+  }
+  .back{
+    text-align:center;
+  }
+}

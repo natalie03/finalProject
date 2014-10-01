@@ -9,6 +9,6 @@ angular.module('finalProjectApp')
       })
       .when('/vendors/:id', {
         templateUrl:'app/vendors/vendorProf.html',
-        constroller: 'VendorsCtrl'
+        controller: 'VendorsCtrl'
       });
   });

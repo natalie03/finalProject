@@ -11,6 +11,9 @@ angular.module('finalProjectApp')
         for (var i = 0; i < data.length; i++) {
             if (data[i].accType === 'vendor'){
               farmProfiles.push(data[i]);
+              $scope.isVendor = true;
+            } else {
+              $scope.isVendor = false;
             }
         }
       $scope.farmProfiles =farmProfiles;
@@ -33,6 +36,7 @@ angular.module('finalProjectApp')
         }
 
       }
+      $route.reload();
     });
 
 

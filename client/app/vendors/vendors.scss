@@ -4,7 +4,11 @@ a{
   font-weight:bold;
 }
 .vendors{
-  background-color:$green;
+  background: url(/assets/images/carrots.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   padding:5%;
   h1{
     color:$green;

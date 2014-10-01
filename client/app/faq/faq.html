@@ -2,6 +2,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="faq">
+  <div class="faqbox">
 <h1>About & FAQ</h1>
 <div ng-controller="FaqCtrl">
   <accordion close-others="oneAtATime">
@@ -12,5 +13,6 @@
       {{item.answ}}
     </accordion-group>
   </accordion>
+</div>
 </div>
 </div>

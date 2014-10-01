@@ -9,5 +9,17 @@ angular.module('finalProjectApp')
     {
       quest: "Another Question?",
       answ:"ANOTHER ANSWER"
+    },
+    {
+      quest: "Another Question?",
+      answ:"ANOTHER ANSWER"
+    },
+    {
+      quest: "Another Question?",
+      answ:"ANOTHER ANSWER"
+    },
+    {
+      quest: "Another Question?",
+      answ:"ANOTHER ANSWER"
     }];
   });

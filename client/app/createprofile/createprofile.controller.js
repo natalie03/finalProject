@@ -77,6 +77,14 @@ angular.module('finalProjectApp')
     $route.reload();
 
   };
+  $scope.removeBox = function(id){
+    $http.delete('api/csas/' + id);
+    $route.reload();
+  };
+  $scope.editBox = function(csaBox){
+    $http.put('api/csas/' + csaBox._id, csaBox);
+    $route.reload();
+  };
 
 
 

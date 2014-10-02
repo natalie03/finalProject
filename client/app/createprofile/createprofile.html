@@ -11,7 +11,7 @@
 
 <form action="" ng-show="accType==='vendor'" ng-submit="addVendor(vendor)">
   <h2>Create Your Company's Profile</h2>
-  <input type="text" placeholder="Company Name" required ng-model="vendor.name">
+  <input type="text" placeholder="Phone Number" required ng-model="vendor.phoneNum">
   <textarea name="bio" id="" cols="30" rows="10" placeholder="About Your Farm/Company" ng-model="vendor.info"></textarea>
   <input type="text" placeholder="Address" ng-model="vendor.address">
   <input type="text" placeholder="Website URL" ng-model="vendor.website">
@@ -21,7 +21,8 @@
 
 <form action="" ng-show="accType==='consumer'" ng-submit="addCust(customer)">
   <h2>Create Your Personal Profile</h2>
-  <input type="text" placeholder="Your Name" ng-model="customer.name" required>
+  <input type="text" placeholder="Phone Number" required ng-model="customer.phoneNum">
+  <input type="text" placeholder="Your Location" ng-model=customer.address>
   <textarea name="bio" id="" cols="30" rows="10" placeholder="Write a Short Bio Here" ng-model="customer.info"></textarea>
 
   <button>Create Profile</button>

@@ -31,7 +31,9 @@ angular.module('finalProjectApp')
   $scope.addVendor = function(vendor){
     var vendorProfile={
       user: $scope.currentUser._id,
-      name: vendor.name,
+      email: $scope.currentUser.email,
+      name: $scope.currentUser.name,
+      phoneNum: vendor.phoneNum,
       accType: "vendor",
       website:vendor.website,
       info: vendor.info,
@@ -47,11 +49,13 @@ angular.module('finalProjectApp')
   $scope.addCust = function(customer){
     var customerProfile={
       user: $scope.currentUser._id,
-      name: customer.name,
+      email: $scope.currentUser.email,
+      name: $scope.currentUser.name,
+      phoneNum:customer.phoneNum,
       accType: "consumer",
       info: customer.info,
       website:"",
-      address: "",
+      address: customer.address,
       csas: [],
       active:true
     }
@@ -68,6 +72,7 @@ angular.module('finalProjectApp')
       price: box.price,
       frequency: box.frequency,
       pulocation: box.pulocation,
+      purchasers: [],
       shares: box.shares,
       payment: box.payment,
       active:true

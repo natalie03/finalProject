@@ -7,6 +7,8 @@
 <a  href="{{cup.website}}">Website</a>
 <p>{{cup.address}}</p>
 <p>{{cup.info}}</p>
+<p>{{cup.email}}</p>
+<p>{{cup.phoneNum}}</p>
 
 <div class="csas" ng-repeat="csaBox in myCsas">
   <h2>{{csaBox.name}}: ${{csaBox.price}}</h2>
@@ -33,7 +35,7 @@
 <div>
   <a href="" ng-show="cup.accType === 'vendor'" ng-click="csa=!csa">Add CSA Boxes to Your Profile</a>
   <br>
-  <a href="">Edit Your Profile</a>
+  <a href="" ng-click="editPro=!editPro">Edit Your Profile</a>
   <form action="" ng-show="csa" ng-submit="addBox(box)">
     <p>Title your CSA Box:
     <input type="text" placeholder="Ex: Single Family Box" ng-model="box.name"></p>
@@ -53,7 +55,9 @@
     <textarea name="" id="" cols="30" rows="10" ng-model="box.payment" placeholder="Please write a message for your customers on how you'd like to be paid. Ex: Please send checks to P.O Box 123"></textarea>
     <button type="submit">Add Box</button>
   </form>
+  <form action="" ng-show="editPro" ng-submit="editPro(cup)"></form>
 </div>
+
 
 </div>
 </div>

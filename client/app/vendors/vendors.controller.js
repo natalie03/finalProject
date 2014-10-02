@@ -3,6 +3,20 @@
 angular.module('finalProjectApp')
   .controller('VendorsCtrl', function ($scope, $http, $routeParams, mainSvc) {
 
+  mainSvc.getCSAs().success(function(responseData){
+    console.log(responseData);
+    $scope.csaData = responseData;
+    $scope.vendCsas = [];
+    for (var i = 0; i < $scope.csaData.length; i++) {
+      console.log("here are the id comps");
+      console.log($scope.csaData[i].user);
+      console.log($scope.singleProfile.user);
+      if($scope.csaData[i].user === $scope.singleProfile.user){
+        $scope.vendCsas.push($scope.csaData[i]);
+      }
+
+    }
+  });
 
 
     mainSvc.getProfs().success(function(data){
@@ -23,21 +37,7 @@ angular.module('finalProjectApp')
       $scope.singleProfile = response;
     });
 
-    mainSvc.getCSAs().success(function(responseData){
-      console.log(responseData);
-      $scope.csaData = responseData;
-      $scope.vendCsas = [];
-      for (var i = 0; i < $scope.csaData.length; i++) {
-        console.log("here are the id comps");
-        console.log($scope.csaData[i].user);
-        console.log($scope.singleProfile.user);
-        if($scope.csaData[i].user === $scope.singleProfile.user){
-          $scope.vendCsas.push($scope.csaData[i]);
-        }
 
-      }
-      $route.reload();
-    });
 
 
 

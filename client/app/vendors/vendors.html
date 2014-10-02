@@ -2,12 +2,17 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="vendors">
 <div class="oneVendor" ng-repeat="profile in farmProfiles" >
-  <h1>{{profile.name}}</h1>
-  <p>{{profile.info}}</p>
-  <p>{{profile.address}}</p>
-  <a href="{{profile.website}}">Website</a>
-  <br>
-  <a href="/vendors/{{profile._id}}">Learn More</a>
+  <h1><a href="/vendors/{{profile._id}}"> {{profile.name}}</a></h1>
+  <div class="left">
+    <p>{{profile.info}}</p>
+  </div>
+  <div class="right">
+    <p>{{profile.phoneNum}}</p>
+    <a href="{{profile.website}}">Website</a>
+    <p>{{profile.address}}</p>
+  </div>
+
+
 </div>
 
 </div>

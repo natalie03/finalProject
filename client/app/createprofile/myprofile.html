@@ -55,7 +55,13 @@
     <textarea name="" id="" cols="30" rows="10" ng-model="box.payment" placeholder="Please write a message for your customers on how you'd like to be paid. Ex: Please send checks to P.O Box 123"></textarea>
     <button type="submit">Add Box</button>
   </form>
-  <form action="" ng-show="editPro" ng-submit="editPro(cup)"></form>
+  <form action="" ng-show="editPro" ng-submit="editPro(cup)">
+    <input type="text" ng-model="cup.name">
+    <input type="text" ng-model="cup.website">
+    <input type="text" ng-model="cup.phoneNum">
+    <input type="text" ng-model="cup.address">
+    <textarea name="" id="" cols="30" rows="10" ng-model="cup.info"></textarea>
+  </form>
 </div>
 
 

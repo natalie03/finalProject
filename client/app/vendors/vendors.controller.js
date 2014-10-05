@@ -32,9 +32,10 @@ angular.module('finalProjectApp')
 
   $scope.purchase = function(csaBox, purchaser){
     var purchaser = {
-      name: $scope.currentUser.name,
+      name: $scope.cup.name,
       id: $scope.currentUser._id,
     };
+    console.log(purchaser);
 
     $http.put('api/csas/csabox/' + csaBox._id, purchaser);
     $route.reload();

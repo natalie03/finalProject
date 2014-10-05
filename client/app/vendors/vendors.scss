@@ -4,36 +4,93 @@ a{
   font-weight:bold;
 }
 .vendors{
-  background: url(/assets/images/carrots.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  padding:5%;
-  h1{
-    color:$green;
-    padding:0;
+  width:80%;
+  margin-left:10%;
+  margin-top:7%;
+  margin-bottom:7%;
+  h2{
+    color:$orange;
     margin:0;
+    padding:0;
   }
 }
-.oneVendor{
-  background-color:rgba(255, 255, 255, .5);
-  border-radius:5px;
-  padding:1%;
-  margin:1%;
+.vendLeft{
+  width:30%;
+  display:inline-block;
+  vertical-align:top;
+  text-align:center;
+}
+.vendRight{
+  width:65%;
+  display:inline-block;
+  margin-left:2%;
+
+
+}
+.footerSearch{
+  text-align:center;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  background-color:$green;
+  input{
+    width:32.5%;
+    display:inline-block;
+    text-align:center;
+  }
 }
 .profile{
   padding-top:5%;
-  padding-bottom:50%;
-  background-color:$green;
+  background-color:white;
   h1{
-    color:white;
+    color:$orange;
+    margin:0;
+    padding:0;
     font-size:4em;
+    text-shadow: 1px 1px 1px #000;
   }
   p, a{
-    font-size:1.5em;
+    font-size:1.25em;
+  }
+  a{
+    color:$green;
   }
   .back{
     text-align:center;
   }
+}
+.aboutCard{
+  text-align:center;
+  margin-top: 3%;
+  img{
+    width:15%;
+    border-radius:100%;
+  }
+}
+.profleft{
+  h2{
+    text-align:center;
+    color:$green;
+    text-shadow: 1px 1px 1px #000;
+  }
+  width:49%;
+  display:inline-block;
+  vertical-align:top;
+}
+.profright{
+  h2{
+    text-align:center;
+    color:$green;
+    text-shadow: 1px 1px 1px #000;
+  }
+  width:49%;
+  display:inline-block;
+  vertical-align:top;
+  .csas{
+    text-align:left;
+    border: 2px solid $orange;
+    padding:2%;
+
+  }
+
 }

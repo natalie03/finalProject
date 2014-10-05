@@ -17,6 +17,7 @@ body{
   top:0;
   width:100%;
   border:none;
+  border-bottom: 2px solid $orange;
   z-index:1;
   .navbar-brand{
     color:$green;

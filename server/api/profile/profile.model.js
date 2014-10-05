@@ -9,11 +9,12 @@ var ProfileSchema = new Schema({
   name: String,
   phoneNum: String,
   accType: String,
+  category: String,
   info: String,
   phone: String,
   address: String,
   website: String,
-  csas:[{type: Schema.ObjectId, ref: 'Csa'}],
+  csas:[],
   active: Boolean
 });
 

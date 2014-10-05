@@ -11,6 +11,13 @@
 
 <form action="" ng-show="accType==='vendor'" ng-submit="addVendor(vendor)">
   <h2>Create Your Company's Profile</h2>
+  <p>Category: </p>
+  <select name="category" id="" ng-model="vendor.category" required>
+    <option value="meat">Meat</option>
+    <option value="fish">Fish</option>
+    <option value="produce">Produce</option>
+    <option value="flowers">Flowers</option>
+  </select>
   <input type="text" placeholder="Phone Number" required ng-model="vendor.phoneNum">
   <textarea name="bio" id="" cols="30" rows="10" placeholder="About Your Farm/Company" ng-model="vendor.info"></textarea>
   <input type="text" placeholder="Address" ng-model="vendor.address">

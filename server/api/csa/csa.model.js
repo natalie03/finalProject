@@ -10,7 +10,7 @@ var CsaSchema = new Schema({
   season: String,
   price: Number,
   frequency: String,
-  purchasers: [],
+  purchasers: [{name:String, id:String}],
   pulocation: String,
   shares: Number,
   payment: String,

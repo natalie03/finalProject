@@ -2,6 +2,8 @@
 
 angular.module('finalProjectApp')
   .controller('CreateprofileCtrl', function ($scope, $location, Auth, $http, mainSvc, $route) {
+    $scope.editCollapse = true;
+    $scope.csaCollapse = true;
 
   $scope.currentUser = Auth.getCurrentUser();
 
@@ -34,6 +36,7 @@ angular.module('finalProjectApp')
       email: $scope.currentUser.email,
       name: $scope.currentUser.name,
       phoneNum: vendor.phoneNum,
+      category: vendor.category,
       accType: "vendor",
       website:vendor.website,
       info: vendor.info,
@@ -46,6 +49,8 @@ angular.module('finalProjectApp')
     $location.path('/');
 
   };
+
+
   $scope.addCust = function(customer){
     var customerProfile={
       user: $scope.currentUser._id,
@@ -53,6 +58,7 @@ angular.module('finalProjectApp')
       name: $scope.currentUser.name,
       phoneNum:customer.phoneNum,
       accType: "consumer",
+      category: "",
       info: customer.info,
       website:"",
       address: customer.address,
@@ -89,6 +95,11 @@ angular.module('finalProjectApp')
   $scope.editBox = function(csaBox){
     $http.put('api/csas/' + csaBox._id, csaBox);
     $route.reload();
+  };
+  $scope.editPro = function(cup){
+    $http.put('api/profiles/' + cup._id, cup);
+    $route.reload();
+
   };
 
 

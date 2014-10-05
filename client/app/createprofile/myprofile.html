@@ -2,22 +2,90 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="profile">
-<div class="myProfile">
-<h1>{{cup.name}}</h1>
-<a  href="{{cup.website}}">Website</a>
-<p>{{cup.address}}</p>
-<p>{{cup.info}}</p>
-<p>{{cup.email}}</p>
-<p>{{cup.phoneNum}}</p>
+<div class="container">
+  <div>
+  <button class="btn btn-default" ng-click="editCollapse = !editCollapse">Edit Profile</button>
+  <button class="btn btn-default" ng-show="cup.accType === 'vendor'" ng-click="csaCollapse = !csaCollapse"> Add CSA Box</button>
+  <button class="btn btn-default" ng-show="cup.accType === 'vendor'" ng-click="shareCollapse = !shareCollapse"> View Shareholders</button>
+  <div collapse="editCollapse">
+    <div class="well well-lg">
+      <form action="" ng-submit="editPro(cup)">
+        <input type="text" ng-model="cup.name">
+        <input type="text" ng-model="cup.email">
+        <input type="text" ng-model="cup.website">
+        <input type="text" ng-model="cup.phoneNum">
+        <input type="text" ng-model="cup.address">
+        <select name="" id="" ng-model="cup.category">
+          <option value="meat">Meat</option>
+          <option value="fish">Fish</option>
+          <option value="produce">Produce</option>
+          <option value="flowers">Flowers</option>
+        </select>
+      <textarea name="" id="" cols="30" rows="10" ng-model="cup.info"></textarea>
+      <button type="submit">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</div>
+<div>
 
-<div class="csas" ng-repeat="csaBox in myCsas">
-  <h2>{{csaBox.name}}: ${{csaBox.price}}</h2>
-  <p>{{csaBox.desc}}</p>
-  <p>Season: {{csaBox.season}}</p>
-  <p>Frequency: {{csaBox.frequency}}</p>
-  <p>{{csaBox.shares}} shares left!</p>
-  <button ng-click="edit=!edit">Edit</button>
-  <button ng-click="removeBox(csaBox._id)">Remove</button>
+  <div collapse="csaCollapse">
+    <div class="well well-lg">
+    <p>test</p>
+    </div>
+  </div>
+</div>
+    <a href="" ng-show="cup.accType === 'vendor'" ng-click="csa=!csa">Add CSA Boxes to Your Profile</a>
+
+    <br>
+    <form action="" ng-show="csa" ng-submit="addBox(box)">
+      <p>Title your CSA Box:
+      <input type="text" placeholder="Ex: Single Family Box" ng-model="box.name"></p>
+      <p>Description:
+      <input type="text" placeholder="Ex: Four different veggies" ng-model="box.desc"></p>
+      <p>Season:
+      <input type="text" placeholder="Ex: August 31-November 31" ng-model="box.season"></p>
+      <p>Frequency:
+      <input type="text" placeholder="Ex: Every Friday" ng-model="box.frequency"></p>
+      <p>Price:
+      <input type="Number" ng-model="box.price"></p>
+      <p>Pick Up Location:
+      <input type="text" placeholder="Ex: Whole Foods, Mt. Pleasant" ng-model="box.pulocation"></p>
+      <p>Available Shares:
+      <input type="Number" ng-model="box.shares"></p>
+      <p>Payment Options:</p>
+      <textarea name="" id="" cols="30" rows="10" ng-model="box.payment" placeholder="Please write a message for your customers on how you'd like to be paid. Ex: Please send checks to P.O Box 123"></textarea>
+      <button type="submit">Add Box</button>
+    </form>
+
+
+
+  <div class="aboutCard">
+    <img src="/assets/images/box.jpg" alt="">
+      <h1>{{cup.name}}</h1>
+      <p>{{cup.email}} | {{cup.phoneNum}} | <a href="{{cup.website}}">Website</a> | {{cup.address}}</p>
+  </div>
+  <hr>
+  <div class="profleft">
+    <h2>About {{cup.name}}:</h2>
+    <p>{{cup.info}}</p>
+  </div>
+  <div class="profright">
+
+    <h2>CSA Options:</h2>
+
+    <div class="csas" ng-repeat="csaBox in myCsas">
+      <h2>{{csaBox.name}}: ${{csaBox.price}}</h2>
+      <p>About: {{csaBox.desc}}</p>
+      <p>Season: {{csaBox.season}}</p>
+      <p>Frequency: {{csaBox.frequency}}</p>
+      <p>{{csaBox.shares}} shares left!</p>
+      <button ng-click="edit=!edit">Edit</button>
+      <button ng-click="removeBox(csaBox._id)">Remove</button>
+
+    </div>
+  </div>
+
   <form ng-show="edit" ng-submit="editBox(csaBox)">
     <input type="text" ng-model="csaBox.name">
     <input type="text"  ng-model="csaBox.desc">
@@ -27,43 +95,3 @@
     <textarea name="" id="" cols="30" rows="10" ng-model="csaBox.payment">{{csaBox.payment}}</textarea>
     <button type="submit">Save Changes</button>
   </form>
-
-</div>
-
-
-
-<div>
-  <a href="" ng-show="cup.accType === 'vendor'" ng-click="csa=!csa">Add CSA Boxes to Your Profile</a>
-  <br>
-  <a href="" ng-click="editPro=!editPro">Edit Your Profile</a>
-  <form action="" ng-show="csa" ng-submit="addBox(box)">
-    <p>Title your CSA Box:
-    <input type="text" placeholder="Ex: Single Family Box" ng-model="box.name"></p>
-    <p>Description:
-    <input type="text" placeholder="Ex: Four different veggies" ng-model="box.desc"></p>
-    <p>Season:
-    <input type="text" placeholder="Ex: August 31-November 31" ng-model="box.season"></p>
-    <p>Frequency:
-    <input type="text" placeholder="Ex: Every Friday" ng-model="box.frequency"></p>
-    <p>Price:
-    <input type="Number" ng-model="box.price"></p>
-    <p>Pick Up Location:
-    <input type="text" placeholder="Ex: Whole Foods, Mt. Pleasant" ng-model="box.pulocation"></p>
-    <p>Available Shares:
-    <input type="Number" ng-model="box.shares"></p>
-    <p>Payment Options:</p>
-    <textarea name="" id="" cols="30" rows="10" ng-model="box.payment" placeholder="Please write a message for your customers on how you'd like to be paid. Ex: Please send checks to P.O Box 123"></textarea>
-    <button type="submit">Add Box</button>
-  </form>
-  <form action="" ng-show="editPro" ng-submit="editPro(cup)">
-    <input type="text" ng-model="cup.name">
-    <input type="text" ng-model="cup.website">
-    <input type="text" ng-model="cup.phoneNum">
-    <input type="text" ng-model="cup.address">
-    <textarea name="" id="" cols="30" rows="10" ng-model="cup.info"></textarea>
-  </form>
-</div>
-
-
-</div>
-</div>

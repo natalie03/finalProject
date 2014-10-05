@@ -41,6 +41,18 @@ exports.update = function(req, res) {
     });
   });
 };
+exports.updatePurchasers = function(req, res) {
+  if(req.body._id) { delete req.body._id; }
+
+  Csa.findByIdAndUpdate(req.params.id,
+    {$push:{"purchasers":{name:req.body.name, id:req.body.id}}},
+    {safe:true, upsert:true},
+    function (err, csa) {
+    if (err) { return handleError(res, err); }
+    if(!csa) { return res.send(404); }
+    console.log(csa);
+  });
+};
 
 // Deletes a csa from the DB.
 exports.destroy = function(req, res) {

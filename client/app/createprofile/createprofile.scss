@@ -1,6 +1,11 @@
 $orange: rgba(255, 165, 0, 1);
 $green: #A8B275;
-
+button{
+  background-color:$orange;
+  border:none;
+  text-size:2em;
+  padding:1%;
+}
 input, textarea{
   width:100%;
   font-size:1.25em;
@@ -8,7 +13,12 @@ input, textarea{
   margin-bottom:1%;
   padding:1%;
 }
-
+table{
+  width:100%;
+  th,td{
+    width:12%;
+  }
+}
 .title{
   text-align:center;
   h1{
@@ -27,9 +37,8 @@ input, textarea{
     color:$green;
   }
 }
-.myProfile{
-  width:80%;
-  margin-left:10%;
+.profile{
+  margin-top:5%;
 }
 form{
   width:80%;
@@ -38,10 +47,13 @@ form{
   h2{
     color:$orange;
   }
-  button{
-    background-color:$orange;
-    border:none;
-    text-size:2em;
-    padding:1%;
+}
+@media all and (max-width:500px){
+  form{
+    width:100%;
+    margin:0;
+  }
+  .login{
+    margin-top:10%;
   }
 }

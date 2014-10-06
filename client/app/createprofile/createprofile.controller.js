@@ -4,6 +4,7 @@ angular.module('finalProjectApp')
   .controller('CreateprofileCtrl', function ($scope, $location, Auth, $http, mainSvc, $route) {
     $scope.editCollapse = true;
     $scope.csaCollapse = true;
+    $scope.shareCollapse = true;
 
   $scope.currentUser = Auth.getCurrentUser();
 
@@ -18,15 +19,19 @@ angular.module('finalProjectApp')
 
   });
 
+
   mainSvc.getCSAs().success(function(data){
     $scope.csas = data;
     $scope.myCsas = [];
+    $scope.purchasedCsas = [];
     for (var i = 0; i < $scope.csas.length; i++) {
       if($scope.csas[i].user === $scope.currentUser._id){
         $scope.myCsas.push($scope.csas[i]);
       }
 
     }
+
+
 
   });
 
@@ -102,6 +107,10 @@ angular.module('finalProjectApp')
 
   };
 
+  // $scope.exportTable = function(id){
+  //   var tableID ="#" + id;
+  //   window.open('data:application/vnd.ms-excel,' + $(tableID).html());
+  // };
 
 
   });

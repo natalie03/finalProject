@@ -45,7 +45,7 @@ exports.updatePurchasers = function(req, res) {
   if(req.body._id) { delete req.body._id; }
 
   Csa.findByIdAndUpdate(req.params.id,
-    {$push:{"purchasers":{name:req.body.name, id:req.body.id}}},
+    {$push:{"purchasers":{name:req.body.name, id:req.body.id, email:req.body.email, phoneNum:req.body.phoneNum, paid:req.body.paid, location:req.body.location}}},
     {safe:true, upsert:true},
     function (err, csa) {
     if (err) { return handleError(res, err); }

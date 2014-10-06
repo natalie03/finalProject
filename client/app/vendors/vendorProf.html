@@ -1,7 +1,7 @@
 <div ng-include="'components/fonts.html'"></div>
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="profile">
-  
+
 <div class="container">
   <div class="aboutCard">
     <img src="/assets/images/box.jpg" alt="">
@@ -17,11 +17,15 @@
     <h2>CSA Options:</h2>
 
     <div class="csas" ng-repeat="csaBox in vendCsas">
-      <h2>{{csaBox.name}}: ${{csaBox.price}}</h2>
-      <p>About: {{csaBox.desc}}</p>
-      <p>Season: {{csaBox.season}}</p>
-      <p>Frequency: {{csaBox.frequency}}</p>
-      <p>{{csaBox.shares}} shares left!</p>
+      <h3>{{csaBox.name}}: ${{csaBox.price}}</h3>
+      <ul>
+        <li>About: {{csaBox.desc}}</li>
+        <li>Season: {{csaBox.season}}</li>
+        <li>Frequency: {{csaBox.frequency}}</li>
+        <li>Available Shares: {{csaBox.shares - csaBox.purchasers.length}}</li>
+      </ul>
+      <alert ng-show="purchased === csaBox._id" type="success">Thank you for purchasing {{csaBox.name}}! In order to complete your purchase, please follow these payment instructions: {{csaBox.payment}}. You will be notified when your payment has been processed.</alert>
+      <alert ng-show="alreadyPurchased === csaBox._id" type="danger"> You have already successfully purchased {{csaBox.name}}. If you need to pay for your share, please follow these instructions: {{csaBox.payment}}. If you believe this is an error, please call {{singleProfile.phoneNum}}.</alert>
       <button ng-click="purchase(csaBox, purchaser)">Buy Now!</button>
 
     </div>

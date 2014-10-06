@@ -1,9 +1,10 @@
 'use strict';
 
 angular.module('finalProjectApp')
-  .controller('VendorsCtrl', function ($scope, $http, Auth, $routeParams, mainSvc) {
+  .controller('VendorsCtrl', function ($scope, $route, $http, Auth, $routeParams, mainSvc) {
 
   $scope.currentUser = Auth.getCurrentUser();
+
 
   mainSvc.singleProf($routeParams.id).success(function(response){
     $scope.singleProfile = response;
@@ -17,6 +18,7 @@ angular.module('finalProjectApp')
         }
 
       }
+
     });
   });
 
@@ -31,14 +33,31 @@ angular.module('finalProjectApp')
   });
 
   $scope.purchase = function(csaBox, purchaser){
+    for (var i = 0; i < csaBox.purchasers.length; i++) {
+      if(csaBox.purchasers[i].id === $scope.currentUser._id){
+        $scope.matched = true;
+        console.log("match");
+      }
+    };
+
+    if($scope.matched === true){
+      $scope.purchased = "false";
+      $scope.alreadyPurchased = csaBox._id;
+    }else{
     var purchaser = {
       name: $scope.cup.name,
       id: $scope.currentUser._id,
+      email: $scope.cup.email,
+      phoneNum: $scope.cup.phoneNum,
+      location:$scope.cup.address,
+      paid: false
     };
-    console.log(purchaser);
+    console.log("putting")
 
     $http.put('api/csas/csabox/' + csaBox._id, purchaser);
-    $route.reload();
+    $scope.purchased= csaBox._id;
+    $scope.alreadyPurchsed = "false";
+    };
 
   };
 

@@ -11,8 +11,9 @@ body{
     color:$orange;
   }
 }
+
 .navbar{
-  background-color:rgba(255, 255, 255, .5);
+  background-color:rgba(255, 255, 255, .6);
   position:fixed;
   top:0;
   width:100%;
@@ -23,8 +24,10 @@ body{
     color:$green;
     font-family: 'Pacifico', cursive;
     text-shadow: 1px 1px 1px #000;
-
   }
+}
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-text{
+  color:black;
 }
 header{
   width:100%;
@@ -84,5 +87,60 @@ header{
   }
   ul{
     text-align:left;
+  }
+}
+@media all and (max-width: 800px){
+  .third{
+    width:80%;
+    margin-left:10%;
+    text-align:left;
+
+    img{
+      width:20%;
+      margin-right:10%;
+      margin-top:5%;
+      display:inline-block;
+      vertical-align:top;
+    }
+    .insideThird{
+      width:69%;
+      display:inline-block;
+    }
+  }
+  header{
+    h1{
+      margin-top:25%;
+    }
+  }
+}
+@media all and (max-width: 550px){
+  .third{
+    width:100%;
+    text-align:left;
+    margin:0;
+    padding:2%;
+
+    img{
+      display:none;
+    }
+    .insideThird{
+      width:100%;
+    }
+  }
+  header{
+    h1{
+      font-size:8em;
+    }
+  }
+}
+@media all and (max-width:450px){
+  header{
+    h1{
+      font-size:5em;
+      margin-top:30%;
+    }
+  }
+  .bgImage{
+    height:300px;
   }
 }

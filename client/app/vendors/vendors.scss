@@ -1,4 +1,11 @@
-
+button{
+  background-color:$orange;
+  border:none;
+  text-size:2em;
+  padding:1%;
+  border-radius:5px;
+  padding:5px;
+}
 a{
   color:rgba(255, 165, 0, 1);
   font-weight:bold;
@@ -24,7 +31,6 @@ a{
   width:65%;
   display:inline-block;
   margin-left:2%;
-
 
 }
 .footerSearch{
@@ -88,9 +94,74 @@ a{
   vertical-align:top;
   .csas{
     text-align:left;
-    border: 2px solid $orange;
     padding:2%;
+    h3{
+      margin:0;
+      padding:0;
+      border: 1px solid $green;
+      border-radius:5px;
+      background-color:#F5F5F5;
+      padding:5px;
+      text-align:center;
+    }
+    ul{
+      border: 1px solid $green;
+      border-radius:5px;
+      background-color:#F5F5F5;
+      padding:5px;
+      list-style:none;
+      font-size:1.25em;
+    }
 
   }
 
+}
+@media all and (max-width: 800px){
+  .vendors{
+    margin-top:10%;
+    margin-bottom:20%;
+  }
+}
+@media all and (max-width: 650px){
+  .vendors{
+    margin-top:18%;
+    width:100%;
+    margin-left:0;
+    margin-bottom:25%;
+  }
+  .oneVendor{
+    h2{
+      font-size:1.25em;
+    }
+    img{
+      width:70%;
+    }
+  }
+  .profleft{
+    width:90%;
+    margin-left:5%;
+  }
+  .profright{
+    width:90%;
+    margin-left:5%;
+  }
+  .footerSearch{
+    input{
+      width:100%;
+    }
+  }
+  .aboutCard{
+    img{
+      display:none;
+    }
+  }
+  .profile{
+    margin-top:12%;
+  }
+}
+@media all and (max-width:450){
+  form{
+    width:100%;
+    margin:0;
+  }
 }

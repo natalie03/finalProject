@@ -4,7 +4,7 @@
 <div class="vendors">
 <div class="oneVendor" ng-repeat="profile in farmProfiles | filter : search" >
   <div class="vendLeft">
-    <img src="/assets/images/fish.png" ng-show="profile.category ==='fish'" alt="">
+    <img src="/assets/images/fish.png" ng-show="profile.category ==='seafood'" alt="">
     <img src="/assets/images/knife.png" ng-show="profile.category ==='meat'" alt="">
     <img src="/assets/images/flower.png" ng-show="profile.category ==='flowers'" alt="">
     <img src="/assets/images/carrot.png" ng-show="profile.category ==='produce'" alt="">
@@ -21,5 +21,5 @@
 <div class="footerSearch">
   <input type="text" ng-model="search.name" placeholder="Search by Name">
   <input type="text" ng-model="search.address" placeholder="Search by Location">
-  <input type="text" ng-model="search.category" placeholder="Fish, Flowers, Meat, or Produce">
+  <input type="text" ng-model="search.category" placeholder="Seafood, Flowers, Meat, or Produce">
 </div>

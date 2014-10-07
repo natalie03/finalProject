@@ -6,15 +6,15 @@ button{
   border-radius:5px;
   padding:5px;
 }
-a{
-  color:rgba(255, 165, 0, 1);
-  font-weight:bold;
-}
+
 .vendors{
   width:80%;
   margin-left:10%;
   margin-top:7%;
   margin-bottom:7%;
+  a{
+    color:rgba(255, 165, 0, 1);
+  }
   h2{
     color:$orange;
     margin:0;
@@ -39,10 +39,14 @@ a{
   bottom:0;
   width:100%;
   background-color:$green;
-  input{
+  input, select{
     width:32.5%;
     display:inline-block;
     text-align:center;
+  }
+  select{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size:1.25em;
   }
 }
 .profile{
@@ -146,17 +150,17 @@ a{
     margin-left:5%;
   }
   .footerSearch{
-    input{
+    input, select{
       width:100%;
     }
+  }
+  .profile{
+    margin-top:12%;
   }
   .aboutCard{
     img{
       display:none;
     }
-  }
-  .profile{
-    margin-top:12%;
   }
 }
 @media all and (max-width:450){

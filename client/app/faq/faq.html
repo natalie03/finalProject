@@ -3,10 +3,13 @@
 
 <div class="faq">
   <div class="faqbox">
-<h1>About & FAQ</h1>
+<h1>About Harvest</h1>
+<p>Harvest was designed to connect community members with local farmers, fisherman, and other small vendors through the model of Community Supported Agriculture. With this app customers can browse participating vendors, compare their options for CSA shares, and sign up to be a shareholder. Vendors can create and edit their profiles and receive a comprehensive table of their shareholders.</p>
+
+<h1>FAQ</h1>
 <div ng-controller="FaqCtrl">
   <accordion close-others="oneAtATime">
-    <accordion-group heading="About CSA" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+    <accordion-group heading="What is CSA?" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
       The Community Supported Agriculture (CSA) model allows for consumers to purchase shares in the farm for a season in return for a specific amount of produce/product each week. Some farms have pick-up locations while others will deliver and most farms offer different size shares. It is important to think about purchasing a share before the season is in full swing so the farmers can plan accordingly and plant enough for everyone.
     </accordion-group>
     <accordion-group heading="{{item.quest}}" ng-repeat="item in faqs">

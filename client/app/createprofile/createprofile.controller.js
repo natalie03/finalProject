@@ -107,10 +107,33 @@ angular.module('finalProjectApp')
 
   };
 
-  // $scope.exportTable = function(id){
-  //   var tableID ="#" + id;
-  //   window.open('data:application/vnd.ms-excel,' + $(tableID).html());
-  // };
+  $scope.exportTable = function(index){
+    var tableId = "dataTable-" + index;
+    var $rows = ($("#" + tableId)).find('tr:has(td)');
+
+    var colDelim = '","';
+    var rowDelim = '"\r\n"';
+    var tmpColDelim = String.fromCharCode(11);
+    var tmpRowDelim = String.fromCharCode(0);
+    var csv = '"' + $rows.map(function (i, row) {
+                var $row = $(row),
+                    $cols = $row.find('td');
+
+                return $cols.map(function (j, col) {
+                    var $col = $(col),
+                        text = $col.text();
+
+                    return text.replace('"', '""'); // escape double quotes
+
+                }).get().join(tmpColDelim);
+
+            }).get().join(tmpRowDelim)
+                .split(tmpRowDelim).join(rowDelim)
+                .split(tmpColDelim).join(colDelim) + '"';
+
+
+    window.open('data:text/csv;charset=utf-8,' + encodeURIComponent(csv));
+  };
 
 
   });

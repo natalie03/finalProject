@@ -16,7 +16,7 @@
 
     <h2>CSA Options:</h2>
 
-    <div class="csas" ng-repeat="csaBox in vendCsas">
+    <div class="csas" ng-repeat="csaBox in vendCsas" ng-show="(csaBox.shares - csaBox.purchasers.length) > 0">
       <h3>{{csaBox.name}}: ${{csaBox.price}}</h3>
       <ul>
         <li>About: {{csaBox.desc}}</li>
@@ -26,7 +26,7 @@
       </ul>
       <alert ng-show="purchased === csaBox._id" type="success">Thank you for purchasing {{csaBox.name}}! In order to complete your purchase, please follow these payment instructions: {{csaBox.payment}}. You will be notified when your payment has been processed.</alert>
       <alert ng-show="alreadyPurchased === csaBox._id" type="danger"> You have already successfully purchased {{csaBox.name}}. If you need to pay for your share, please follow these instructions: {{csaBox.payment}}. If you believe this is an error, please call {{singleProfile.phoneNum}}.</alert>
-      <button ng-click="purchase(csaBox, purchaser)">Buy Now!</button>
+      <button ng-show="isLoggedIn()" ng-click="purchase(csaBox, purchaser)">Buy Now!</button>
 
     </div>
   </div>

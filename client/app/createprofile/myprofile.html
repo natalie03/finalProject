@@ -3,10 +3,9 @@
 
 <div class="profile">
 <div class="container">
-  <div>
+  <div class="buttons">
   <button class="btn btn-default" ng-click="editCollapse = !editCollapse">Edit Profile</button>
   <button class="btn btn-default" ng-show="cup.accType === 'vendor'" ng-click="csaCollapse = !csaCollapse"> Add CSA Box</button>
-  <button class="btn btn-default" ng-show="cup.accType === 'consumer'" ng-click="custCollapse = !custCollapse">View Shares</button>
   <button class="btn btn-default" ng-show="cup.accType === 'vendor'" ng-click="shareCollapse = !shareCollapse"> View Shareholders</button>
   <div collapse="editCollapse">
     <div class="well well-lg">
@@ -18,7 +17,7 @@
         <input type="text" ng-model="cup.address">
         <select name="" id="" ng-model="cup.category" ng-show="cup.accType === 'vendor'">
           <option value="meat">Meat</option>
-          <option value="fish">Fish</option>
+          <option value="seafood">Seafood</option>
           <option value="produce">Produce</option>
           <option value="flowers">Flowers</option>
         </select>
@@ -56,8 +55,8 @@
   <div collapse="shareCollapse">
     <div class="well well-lg" >
       <div ng-repeat="csaBox in myCsas">
-      <table>
-      <tr>
+      <table id="dataTable-{{$index}}">
+      <tr class="tableHead">
         <th>CSA</th>
         <th>Frequency</th>
         <th>Pickup Location</th>
@@ -65,7 +64,6 @@
         <th>Location</th>
         <th>Email</th>
         <th>Phone Number</th>
-        <th>Paid?</th>
       </tr>
       <tr ng-repeat="people in csaBox.purchasers">
           <td>{{csaBox.name}}</td>
@@ -75,12 +73,12 @@
           <td>{{people.location}}</td>
           <td>{{people.email}}</td>
           <td>{{people.phoneNum}}</td>
-          <td>{{people.paid}}</td>
       </tr>
     </table>
-<!--     <button>Export {{csaBox.name}} Data</button> -->
+    <br>
+ <button ng-click="exportTable($index)">Export {{csaBox.name}} Data</button>
+ <hr>
   </div>
-<hr>
 
     </div>
   </div>
@@ -92,7 +90,11 @@
       <p>{{cup.email}} | {{cup.phoneNum}} | <a href="{{cup.website}}" ng-show="cup.accType === 'vendor'">Website | </a>{{cup.address}}</p>
   </div>
   <hr>
-  <div class="profleft">
+  <div ng-show="cup.accType === 'vendor'" class="profleft">
+    <h2>About {{cup.name}}:</h2>
+    <p>{{cup.info}}</p>
+  </div>
+  <div ng-show="cup.accType === 'consumer'">
     <h2>About {{cup.name}}:</h2>
     <p>{{cup.info}}</p>
   </div>

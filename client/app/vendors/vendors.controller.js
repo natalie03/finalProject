@@ -4,6 +4,7 @@ angular.module('finalProjectApp')
   .controller('VendorsCtrl', function ($scope, $route, $http, Auth, $routeParams, mainSvc) {
 
   $scope.currentUser = Auth.getCurrentUser();
+  $scope.isLoggedIn = Auth.isLoggedIn;
 
 
   mainSvc.singleProf($routeParams.id).success(function(response){

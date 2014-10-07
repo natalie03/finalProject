@@ -15,8 +15,12 @@ input, textarea{
 }
 table{
   width:100%;
+
   th,td{
-    width:12%;
+    width:14%;
+  }
+  th{
+    font-weight:700;
   }
 }
 .title{
@@ -37,8 +41,8 @@ table{
     color:$green;
   }
 }
-.profile{
-  margin-top:5%;
+.buttons{
+  margin-top:2%;
 }
 form{
   width:80%;
